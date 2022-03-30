@@ -58,7 +58,6 @@ const isNewSentence = (startIdx, endIdxArray, sentenceCt) => {
     (sentenceCt === 0 ||
       (sentenceCt > 0 && startIdx > endIdxArray[sentenceCt - 1]))
   ) {
-    console.log("****ISNEWSENTENCE");
     return true;
   }
   return false;
@@ -264,7 +263,10 @@ async function onboundaryHandler(event, type) {
   textarea.focus();
   // if there is no current selected range
   if (textarea.setSelectionRange) {
+    
     textarea.setSelectionRange(anchorPosition, activePosition);
+    // let selection = Window.getSelection();
+    // selection.setAttribute("background-color", "yellow");
   } else {
     // OLD CONTENT
     // console.log("########NO SETSELECTION RANGE")

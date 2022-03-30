@@ -82,3 +82,17 @@ mark {
   padding: 0;
   /* margin: 0 auto;  */
 }
+
+/* textarea::selection {
+  background-color: rgb(255, 255, 128);
+  opacity: 0.6;
+}
+textarea::-moz-selection {
+  background: transparent;
+  background-color: rgb(255, 255, 128);
+ }
+
+ textarea::-webkit-selection {
+  background: transparent;
+  background-color: rgb(255, 255, 128);
+ } */
