@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Speech synthesiser</title>
+  <!-- <link rel="stylesheet" href="reset.css" /> -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mark.css" />
+  <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <h1>Speech synthesiser</h1>
+
+  <p>
+    Enter some text in the input below and press return or the "play" button
+    to hear it. change voices using the dropdown menu.
+  </p>
+
+  <form>
+    <div class="parent-container">
+      <div class="container">
+        <div id="backdrop" class="backdrop">
+          <div id="highlights" class="center highlights">
+          </div>
+          <!-- TextArea value must end with space if End of Paragraphs -->
+          <textarea readonly id="textarea" rows="17" cols="85">11.1 The Competitive Labor Market 
+
+The market for labor is of particular importance in the economy because it affects all of us. You are directly influenced by the labor market when you are looking for a job or are employed and earning money. In this chapter, instead of firms acting as suppliers, as we have viewed them so far, firms are the buyers (demanders) of labor. And individuals, like you, are the suppliers of labor. 
+
+The market for labor, then, is composed of suppliers (workers) and demanders (firms). Workers produce goods and services and therefore are known as factors of production—a term we've met before in Chapter 6. Remember that a factor of production is used in the production of other goods. 
+
+Markets for factors of production are somewhat different from markets for goods and services that we consume because the demand for factors of production is derived from the demand for final goods and services. A firm first makes the decision to produce a good or service and then decides which factors are necessary to produce that good or service. </textarea>
+        </div>
+      </div>
+    </div>
+<div class="checkbox-container">
+    <label class="checkbox-inline rt-pd-10"">
+        <input type="checkbox" name="settings" value="word">Word
+    </label>
+    <label class="rt-pd-10" id="sentence">
+      <input  type="checkbox" name="settings" value="sentence">Sentence
+    </label>
+  </div>
+    <!-- <label class="">
+      <input type="checkbox" name="settings" value="line">Line
+    </label> -->
+    <br>
+    <div class="flex-parent">
+    <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate" />
+    <div class="rate-value">1</div>
+    <div class="clearfix"></div>
+    </div>
+    <div>
+      <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch" />
+      <div class="pitch-value">1</div>
+      <div class="clearfix"></div>
+    </div>
+    <select></select>
+    <div class="controls">
+      <button id="play" type="submit">Play</button>
+      <button id="pause" type="submit">Pause</button>
+      <button id="resume" type="submit">Resume</button>
+      <button id="stop" type="submit">Stop</button>
+    </div>
+  </form>
+
+  <script type="module" src="script.js" defer></script>
+  <script type="module" src="markText.js" defer></script>
+</body>
+
+</html>

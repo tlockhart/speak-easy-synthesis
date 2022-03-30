@@ -1,0 +1,103 @@
+body, html {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1, p {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+/* .txt,  */
+#textarea, select, form > div {
+  margin: 0 auto;
+  display: block;
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 5px;
+}
+
+/* .textarea {
+  width: 80%;
+} */
+
+select {
+  width: 83%;
+}
+
+form > div {
+  width: 81%;
+}
+
+/* .txt,  */
+
+#textarea, form > div {
+  margin-bottom: 10px;
+  /* overflow: auto; */
+}
+
+.clearfix {
+  clear: both;
+}
+
+label {
+  float: left;
+  width: 10%;
+  line-height: 1.5;
+}
+
+.rate-value, .pitch-value {
+  float: right;
+  width: 5%;
+  line-height: 1.5;
+}
+
+#rate, #pitch {
+  float: right;
+  width: 81%;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.controls button {
+  padding: 10px;
+}
+
+.checkbox-inline{
+  /* margin-left: 71px; */
+  margin-bottom: 10px;
+  /* width: auto; */
+}
+
+.top-mg-10 {
+  margin-top: 10px;
+}
+.rt-pd-10 {
+  margin-right: 10px;
+}
+
+/* #txt {
+  width: 680px;
+  height: 306px;
+  margin: 10px 45.5px;
+
+  margin-top: 0;
+  padding: 5px;
+  border: 1px solid #ccc;
+} */
+#sentence {
+  width: 100px;
+}
