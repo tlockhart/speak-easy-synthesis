@@ -20,7 +20,7 @@ function applyHighlights(text, startIdx, endIdx) {
     "length:",
     text.length - 1
   );
- 
+
 const escapedRegex = escapeRegex(sentence);
 console.log(`escapedRegex: ${escapedRegex}`)
   const regex = new RegExp(escapedRegex);
@@ -42,7 +42,7 @@ function unApplyHighlights(text) {
      "length:",
     text.length - 1
   );
- 
+
 const escapedRegex = escapeRegex(sentence);
 console.log(`escapedRegex: ${escapedRegex}`)
   const regex = new RegExp(escapedRegex);
@@ -57,6 +57,10 @@ export const  removeSentenceHighlights = () => {
   let unHighlightedText =  unApplyHighlights(text);
   console.log("unHLighted:", unHighlightedText);
   highlights.innerHTML = unHighlightedText;
+  setTimeout(()=>{
+    let newMark = document.querySelector('mark')
+    newMark.style.opacity = 0
+  },100)
 }
 
 export const highlightSentence = (startIdx, endIdx) => {
@@ -66,6 +70,11 @@ export const highlightSentence = (startIdx, endIdx) => {
   let highlightedText = applyHighlights(text, startIdx, endIdx);
   console.log("HLighted:", highlightedText);
   highlights.innerHTML = highlightedText;
+  setTimeout(()=>{
+    let newMark = document.querySelector('mark')
+    newMark.style.opacity = 1
+  },100)
+
 };
 
 export const clearWordSelection = (textarea) => {

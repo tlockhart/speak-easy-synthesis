@@ -58,6 +58,7 @@ const isNewSentence = (startIdx, endIdxArray, sentenceCt) => {
     (sentenceCt === 0 ||
       (sentenceCt > 0 && startIdx > endIdxArray[sentenceCt - 1]))
   ) {
+    console.log("****ISNEWSENTENCE");
     return true;
   }
   return false;
@@ -79,7 +80,7 @@ const isEndOfParagraph = (
   sentenceCt,
   text
 ) => {
-  
+
   if (
     sentenceCt > 2 &&
     endIdxArray[sentenceCt - 1] === endIdx &&
@@ -250,8 +251,8 @@ async function onboundaryHandler(event, type) {
     console.log("&&&&&&&EndofPage:", isEndOfParagraph);
     if (isEndOfParagraph) {
       /**********************
-       * Remove Selection: 
-       * Must be applied to word 
+       * Remove Selection:
+       * Must be applied to word
        * condition as well
        ***********************/
        removeSentenceHighlights();
@@ -263,10 +264,19 @@ async function onboundaryHandler(event, type) {
   textarea.focus();
   // if there is no current selected range
   if (textarea.setSelectionRange) {
-    
     textarea.setSelectionRange(anchorPosition, activePosition);
-    // let selection = Window.getSelection();
-    // selection.setAttribute("background-color", "yellow");
+    if (window.getSelection) {
+        // let text = window.getSelection().toString();
+        // let newSpan = document.createElement('span');
+        // let selection = window.getSelection().getRangeAt(0);
+        // console.log(selection)
+        // console.log(text)
+        // let parentNode = selection.startContainer
+        // let savedStart = selection.startOffset
+        // newSpan.classList.add(`mark-word`)
+        // newSpan.innerText = text
+        // selection.surroundContents(newSpan);
+    }
   } else {
     // OLD CONTENT
     // console.log("########NO SETSELECTION RANGE")
@@ -355,6 +365,10 @@ https://vanillajstoolkit.com/polyfills/arrayforeach/
 
   playBtn.onclick = (event) => {
     event.preventDefault();
+
+    if (speechSynthesis) {
+      speechSynthesis.cancel();
+    }
 
     resetDefaults();
     setVoiceOptions(voices, voiceSelect, utterThis);

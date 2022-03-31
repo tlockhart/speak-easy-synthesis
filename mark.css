@@ -48,6 +48,7 @@ textarea {
   font-size: 20px/28px;
   letter-spacing: 1px;
   overflow: hidden;
+  line-height: 122%;
 }
 
 textarea {
@@ -55,7 +56,22 @@ textarea {
   background-color: transparent;
   z-index: 10;
   padding-right: 10px;
-  opacity: 0.6;
+  /*opacity: 0.6;*/
+  text-decoration: underline transparent;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+textarea::selection {
+  background: #CDD1DA;
+  text-decoration: underline #747474;
+}
+
+textarea::-moz-selection {
+  background: #CDD1DA;
+  text-decoration: underline #747474;
 }
 
 .highlights {
@@ -64,9 +80,15 @@ textarea {
 
 mark {
   color: transparent;
-  background-color: #d4e9ab;
-  padding-bottom: 5px; 
+  background-color: #E3E6ED;
+  padding-bottom: 5px;
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
 }
+
+/*.mark-word{*/
+/*  background-color: red;*/
+/*}*/
 
 .backdrop {
   background-color: #fff;
@@ -82,17 +104,3 @@ mark {
   padding: 0;
   /* margin: 0 auto;  */
 }
-
-/* textarea::selection {
-  background-color: rgb(255, 255, 128);
-  opacity: 0.6;
-}
-textarea::-moz-selection {
-  background: transparent;
-  background-color: rgb(255, 255, 128);
- }
-
- textarea::-webkit-selection {
-  background: transparent;
-  background-color: rgb(255, 255, 128);
- } */
