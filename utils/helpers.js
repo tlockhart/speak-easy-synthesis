@@ -415,6 +415,7 @@ https://vanillajstoolkit.com/polyfills/arrayforeach/
     if (speechSynthesis) {
       speechSynthesis.cancel();
     }
+    removeSentenceHighlights();
     resetDefaults();
   };
 
